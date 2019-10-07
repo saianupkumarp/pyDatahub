@@ -53,5 +53,13 @@ class Dataset(object):
         if 'id' not in data:
             raise ValueError(data)
 
-        # self.schema = data['tschema']
         self.data = data['data']
+
+class PostCommitResponse(object):
+    """The class contains telematics for pushing a commit"""
+
+    def __init__(self, data):
+        """The method loading data from json to class fields"""
+
+        self.submit_id = data['_id'] if '_id' in data else None
+        self.status = data['Status'] if 'Status' in data else 'failed'

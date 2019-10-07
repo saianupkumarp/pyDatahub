@@ -2,7 +2,7 @@
 
 import os
 
-class ApiConfig(object):
+class Config(object):
     """
     This class configures KAPSARC Datahub api.
     The class contains fields:
@@ -12,7 +12,7 @@ class ApiConfig(object):
 
     def __new__(cls):
         if not hasattr(cls, 'instance'):
-            cls.instance = super(ApiConfig, cls).__new__(cls)
+            cls.instance = super(Config, cls).__new__(cls)
             cls.instance.domain = os.environ['DATAHUB_HOST'] if 'DATAHUB_HOST' in os.environ else 'apps.kapsarc.com'
             cls.instance.api_key = None
         return cls.instance
