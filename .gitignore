@@ -4,3 +4,4 @@ example.py
 *.pyc
 build/
 dist/
+*.sh
