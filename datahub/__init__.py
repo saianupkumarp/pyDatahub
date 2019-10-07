@@ -3,8 +3,9 @@
 from datahub.config import Config
 from datahub.api import Client
 import pandas as pd
+import json
 
-def get(repo_id = None, branch_id = None, table_id=None):
+def get(repo_id = None, branch_id = None, table_id = None):
     """Use this function to get data from Datahub"""
 
     if not repo_id:
@@ -13,8 +14,8 @@ def get(repo_id = None, branch_id = None, table_id=None):
     config = Config()
     client = Client(config.domain, config.api_key)
 
-    datum = client.get_dataset(repo_id, branch_id, table_id) if repo_id else None
-    return pd.Dataframe(datum)
+    datum = client.get_dataset(repo_id, branch_id, table_id)
+    return json.loads(json.dumps(datum.__dict__))
 
 def upsert_commit(df = None, repo_id = None, branch_id = None, table_id=None):
     """Use this function to push a commit on Datahub"""

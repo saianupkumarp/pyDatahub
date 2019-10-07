@@ -49,7 +49,6 @@ class Dataset(object):
 
     def __init__(self, data):
         """The method loading data from json to class fields"""
-
         self.data = data['data']
 
 class PostCommitResponse(object):

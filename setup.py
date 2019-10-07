@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name="pyDatahubDriver",
-	version="0.1.1",
+	version="0.1.1b",
 	author="King Abdullah Petroleum Studies and Research Center",
 	author_email="anup.kumar@kapsarc.org",
 	description="KAPSARC Datahub",
@@ -16,7 +16,7 @@ setuptools.setup(
     ],
 	long_description=long_description,
 	long_description_conent_type="text/markdown",
-	url="https://github.com/kapsarc/pyDatahub",
+	# url="https://github.com/kapsarc/pyDatahub",
 	packages=['datahub'],
 	package_dir={'datahub': 'datahub'},
 	classifiers=[
